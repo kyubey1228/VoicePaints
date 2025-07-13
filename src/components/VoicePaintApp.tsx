@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Volume2, Twitter } from 'lucide-react';
+import { Volume2 } from 'lucide-react';
+import { Twitter } from 'lucide-react';
 import { useAudioAnalyzer } from '../hooks/useAudioAnalyzer';
 import { useCanvasDrawing } from '../hooks/useCanvasDrawing';
 import { useMediaRecorder } from '../hooks/useMediaRecorder';
@@ -14,6 +15,7 @@ const VoicePaintApp: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameRef = useRef<number | null>(null);
   const isDrawingRef = useRef<boolean>(false);
+  const brushColorRef = useRef<string>(DRAWING_CONSTANTS.DEFAULT_BRUSH_COLOR);
 
   const [isRecording, setIsRecording] = useState<boolean>(false);
   const [currentFrequency, setCurrentFrequency] = useState<number>(0);
@@ -48,11 +50,11 @@ const VoicePaintApp: React.FC = () => {
     if (volume > DRAWING_CONSTANTS.MIN_VOLUME_THRESHOLD && 
         maxValue > DRAWING_CONSTANTS.MIN_FREQUENCY_VALUE && 
         isDrawingRef.current) {
-      draw(frequency, volume, brushColor);
+      draw(frequency, volume, brushColorRef.current);
     }
 
     animationFrameRef.current = requestAnimationFrame(analyzeAndDraw);
-  }, [analyzeAudioData, draw, brushColor]);
+  }, [analyzeAudioData, draw]);
 
   // マイクの開始
   const startRecording = async (): Promise<void> => {
@@ -130,6 +132,11 @@ const VoicePaintApp: React.FC = () => {
       canvas.height = canvasSize.height;
     }
   }, [canvasSize]);
+
+  // brushColor の変更を ref に反映
+  useEffect(() => {
+    brushColorRef.current = brushColor;
+  }, [brushColor]);
 
   // コンポーネントのクリーンアップ
   useEffect(() => {
