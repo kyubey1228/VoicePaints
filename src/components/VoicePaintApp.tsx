@@ -15,7 +15,7 @@ const VoicePaintApp: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameRef = useRef<number | null>(null);
   const isDrawingRef = useRef<boolean>(false);
-  const brushColorRef = useRef<string>(DRAWING_CONSTANTS.DEFAULT_BRUSH_COLOR);
+  const brushColorRef = useRef<string>('#3B82F6');
 
   const [isRecording, setIsRecording] = useState<boolean>(false);
   const [currentFrequency, setCurrentFrequency] = useState<number>(0);
