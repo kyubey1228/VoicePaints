@@ -155,7 +155,7 @@ const VoicePaintApp: React.FC = () => {
               <p className="text-blue-200">歌いながら絵を描こう！声の高低で線の太さ、音量で色の濃さが変わります</p>
             </div>
             <a
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('Voice Paintで声を使ってアートを作ってみました！🎨🎤\n\n')}&url=${encodeURIComponent(window.location.href)}&hashtags=${encodeURIComponent('VoicePaint,WebAudioAPI,CreativeCoding')}`}
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('Voice Paintで声を使ってアートを作ってみました！🎨🎤\n\nhttps://kyubey1228.github.io/VoicePaints/\n\n※保存した画像を添付してシェアしてください')}&hashtags=${encodeURIComponent('VoicePaint,WebAudioAPI,CreativeCoding')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all transform hover:scale-105 shadow-lg"
