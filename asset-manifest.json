@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/VoicePaints/static/css/main.343e4419.css",
+    "main.js": "/VoicePaints/static/js/main.e8ae1eba.js",
+    "static/js/453.bd5ff72b.chunk.js": "/VoicePaints/static/js/453.bd5ff72b.chunk.js",
+    "index.html": "/VoicePaints/index.html",
+    "main.343e4419.css.map": "/VoicePaints/static/css/main.343e4419.css.map",
+    "main.e8ae1eba.js.map": "/VoicePaints/static/js/main.e8ae1eba.js.map",
+    "453.bd5ff72b.chunk.js.map": "/VoicePaints/static/js/453.bd5ff72b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.343e4419.css",
+    "static/js/main.e8ae1eba.js"
+  ]
+}
